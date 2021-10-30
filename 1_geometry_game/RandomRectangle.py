@@ -17,11 +17,11 @@ class RandomRectangle:
 
     @property
     def width(self):
-        return self.bottom_left_pnt.x - self.upper_right_pnt
+        return  self.upper_right_pnt.x - self.bottom_left_pnt.x
 
     @property
     def heigth(self):
-        return self.upper_right_pnt.y - self.bottom_left_pnt
+        return self.upper_right_pnt.y - self.bottom_left_pnt.y
 
     @property
     def upper_left_pnt(self):
