@@ -9,8 +9,8 @@ class RandomRectangle:
                                      min_y=self.bottom_left_pnt.y)
 
     def __repr__(self):
-        return f"Rectangle Coordinates: {self.bottom_left_pnt.x}, {self.bottom_left_pnt.y}" \
+        return f"Rectangle Coordinates: {self.bottom_left_pnt.x}, {self.bottom_left_pnt.y} " \
                f"and {self.upper_right_pnt.x}, {self.upper_right_pnt.y}"
 
-    def is_inside(self) ->bool:
-        pass
+    def is_inside(self, user_point: RandomPoint) ->bool:
+        return self.bottom_left_pnt < user_point < self.upper_right_pnt
