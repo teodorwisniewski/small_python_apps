@@ -16,8 +16,8 @@ class GeometryGame:
         return result
 
     def guess(self):
-        x_guess = input("Guess the point inside - x coordinate")
-        y_guess = input("Guess the point inside - y coordinate")
+        x_guess = input("Guess the point inside - x coordinate: ")
+        y_guess = input("Guess the point inside - y coordinate: ")
         self.user_point = RandomPoint(x=x_guess, y=y_guess)
 
     def get_result(self):
