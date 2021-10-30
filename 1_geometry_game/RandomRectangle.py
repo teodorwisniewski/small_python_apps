@@ -14,3 +14,21 @@ class RandomRectangle:
 
     def is_inside(self, user_point: RandomPoint) ->bool:
         return self.bottom_left_pnt < user_point < self.upper_right_pnt
+
+    @property
+    def width(self):
+        return self.bottom_left_pnt.x - self.upper_right_pnt
+
+    @property
+    def heigth(self):
+        return self.upper_right_pnt.y - self.bottom_left_pnt
+
+    @property
+    def upper_left_pnt(self):
+        return RandomPoint(x=self.bottom_left_pnt.x,
+                            y=self.bottom_left_pnt.y+self.heigth )
+
+    @property
+    def bottom_right_pnt(self):
+        return RandomPoint(x=self.bottom_left_pnt.x + self.width,
+                            y=self.bottom_left_pnt.y)
