@@ -16,3 +16,6 @@ class RandomPoint:
 
     def __lt__(self, other):
         return (self.x < other.x) and (self.y < other.y)
+
+    def get_cord(self):
+        return self.x, self.y
