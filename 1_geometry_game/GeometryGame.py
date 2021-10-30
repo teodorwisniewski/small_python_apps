@@ -9,7 +9,8 @@ class GeometryGame:
         self.rectangle = RandomRectangle()
         print(self.rectangle)
         self.guess()
-        self.rectangle.is_inside(self.user_point)
+        result = self.rectangle.is_inside(self.user_point)
+        print(f"Your point was inside rectangle: {result}")
 
     def guess(self):
         x_guess = input("Guess the point inside - x coordinate: ")
