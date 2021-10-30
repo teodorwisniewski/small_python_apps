@@ -1,27 +1,21 @@
 import random
+from RandomPoint import RandomPoint
+from RandomRectangle import RandomRectangle
 
 
 class GeometryGame:
 
     def __init__(self):
-        self.bottom_left_pnt = RandomPoint()
-        self.upper_right_pnt = RandomPoint(min_x=self.bottom_left_pnt.x,
-                                     min_y=self.bottom_left_pnt.y)
-
-    def run(self) -> bool:
+        self.rectangle = RandomRectangle()
+        print(self.rectangle)
         self.guess()
-        result = self.get_result()
-
-        print(f"Your point is insede rectangle: {result}")
-        return result
+        self.rectangle.is_inside(self.user_point)
 
     def guess(self):
         x_guess = input("Guess the point inside - x coordinate: ")
         y_guess = input("Guess the point inside - y coordinate: ")
-        self.user_point = RandomPoint(x=x_guess, y=y_guess)
+        self.user_point = RandomPoint(x=int(x_guess), y=int(y_guess))
 
-    def get_result(self):
-        return self.bottom_left_pnt < self.user_point < self.upper_right_pnt
 
 
 
